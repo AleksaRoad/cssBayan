@@ -5,11 +5,9 @@ li {
   margin: 0;
   padding: 0;
 }
-
 img {
   vertical-align: top;
 }
-
 html,
 body {
   margin: 0;
@@ -18,7 +16,6 @@ body {
   -webkit-tap-highlight-color: transparent;
   color: #b3b2a9;
 }
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -28,11 +25,9 @@ body {
   align-items: start;
   padding-inline: 5%;
 }
-
 body {
   background-color: #191919;
 }
-
 span {
   display: block;
   width: 100%;
@@ -41,7 +36,6 @@ span {
   transition: all 0.7s ease-in;
   margin-top: 0.5em;
 }
-
 .text {
   font-size: 1.5em;
   text-decoration: none;
@@ -54,12 +48,10 @@ span {
   flex-direction: column;
   margin: 0 auto;
 }
-
 i {
   color: #191919;
   transition: 0.5s ease-in-out;
 }
-
 .title {
   color: #c5b358;
   font-size: 2.5em;
@@ -81,31 +73,26 @@ img {
   justify-content: center;
   align-items: center;
 }
-
 label {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1em;
 }
-
 label {
   cursor: pointer;
 }
-
 input[type="radio"] {
   -webkit-appearance: none;
   appearance: none;
   display: none;
 }
-
 input[id^="accordion"]:checked ~ label {
   color: #c5b358;
 }
 input[id^="accordion"]:checked ~ label i {
   rotate: 45deg;
 }
-
 input[id^="accordion"]:checked ~ label[id^="accordion-content"] {
   max-height: 100vh;
   transition-duration: 1s;
@@ -155,5 +142,3 @@ input[id^="accordion"]:checked ~ label[id^="accordion-content"] {
     font-size: 1em;
   }
 }
-
-/* git commit -m "fix: cross an adaptive hover (`date +'%a, %b %e, %Y %H:%M:%S'`)"*/
