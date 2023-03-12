@@ -8,6 +8,11 @@ li {
 img {
   vertical-align: top;
 }
+html{
+  color-scheme: dark;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
 html,
 body {
   margin: 0;
@@ -15,6 +20,25 @@ body {
   font-family: "Open Sans", sans-serif;
   -webkit-tap-highlight-color: transparent;
   color: #b3b2a9;
+  background-color: #191919;
+}
+.line {
+  display: block;
+  width: 100%;
+  height: 0.05em;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.7s ease-in;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+}
+.text {
+  font-size: 1.5em;
+  text-decoration: none;
+  word-wrap: break-word;
+  padding: 0.25em 0;
+}
+.last-line{
+  margin-top: 0.5em;
 }
 .wrapper {
   display: flex;
@@ -25,32 +49,18 @@ body {
   align-items: start;
   padding-inline: 5%;
 }
-body {
-  background-color: #191919;
-}
-span {
-  display: block;
-  width: 100%;
-  height: 0.05em;
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: all 0.7s ease-in;
-  margin-top: 0.5em;
-}
-.text {
-  font-size: 1.5em;
-  text-decoration: none;
-  word-wrap: break-word;
-  padding: 0.25em 0;
-}
 .hover__container {
   display: flex;
   max-width: 50em;
   flex-direction: column;
   margin: 0 auto;
+  cursor: pointer;
 }
-i {
-  color: #191919;
-  transition: 0.5s ease-in-out;
+label {
+  display: flex;
+  flex-direction: column;
+  transition: all 1s linear;
+  cursor: pointer;
 }
 .title {
   color: #c5b358;
@@ -61,26 +71,24 @@ i {
   gap: 0.5em;
   flex-direction: column;
 }
-img {
-  padding: 1em 0;
-  width: 15em;
-}
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition-duration: 1s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-label {
+.button {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1em;
 }
-label {
-  cursor: pointer;
+i {
+  opacity: 0;
+  color: #c5b358;
+  transition: 0.5s ease-in-out;
+}
+label img {
+  max-height: 0;
+  overflow: hidden;
+  scale: 0.5;
+  transition: all 1s linear;
+  width: 15em;
+  margin: 0 auto;
 }
 input[type="radio"] {
   -webkit-appearance: none;
@@ -93,32 +101,37 @@ input[id^="accordion"]:checked ~ label {
 input[id^="accordion"]:checked ~ label i {
   rotate: 45deg;
 }
-input[id^="accordion"]:checked ~ label[id^="accordion-content"] {
+input[id^="accordion"]:checked ~ label img {
+  padding: 0.5em 0;
   max-height: 100vh;
-  transition-duration: 1s;
-  transition-property: max-height;
-  cursor: pointer;
+  scale: 1;
 }
 @media (hover: hover) {
-  label:hover ~ .accordion-content,
-  .accordion-content:hover {
+  input[id^="accordion"]:hover ~ label img {
+    padding: 0.5em 0;
     max-height: 100vh;
-    transition-duration: 1s;
-    transition-property: max-height;
-    cursor: pointer;
-  }
-  .hover__container:hover,
-  .hover__container:hover i {
-    color: #c5b358;
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
+    scale: 1;
   }
   li:hover i[id^="i"] {
     rotate: 45deg;
   }
+  input[id^="accordion"]:checked ~ label:active,
+  label:active,
+  input[id^="accordion"]:checked ~ label:active i,
+  label:active i {
+    color: #b3b2a9;
+    opacity: 0.6;
+  }
+  .hover__container:hover i {
+    opacity: 1;
+  }
+  .hover__container:hover {
+    color: #c5b358;
+  }
 }
 @media (hover: none) {
   .hover__container i {
+    opacity: 1;
     color: #b3b2a9;
   }
   input[id^="accordion"]:checked ~ label i {
